@@ -18,3 +18,17 @@ def deleteHead(self, head):
         else:
             head=head.next
             return head
+
+# DELETE TAIL NODE
+ def deleteTail(self, head):
+        if head is None or head.next is None:
+            return
+        else:
+            curr=head
+            while curr.next.next is not None:
+                curr=curr.next
+            temp=curr.next
+            curr.next=None
+            del temp
+            return head
+
