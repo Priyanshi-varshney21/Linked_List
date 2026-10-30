@@ -10,3 +10,11 @@ def LLTraversal(self, head):
                 ans.append(curr.data)
                 curr=curr.next
         return ans
+
+# DELETE HEAD
+def deleteHead(self, head):
+        if head is None:
+            return 
+        else:
+            head=head.next
+            return head
