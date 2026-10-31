@@ -32,3 +32,20 @@ def deleteHead(self, head):
             del temp
             return head
 
+# DELETION OF KTH NODE
+def deleteKthNode(self, head, k):
+        if head is None:
+            return
+        if k==1:
+            head=head.next
+            return head
+        curr=head
+        for i in range(1,k-1):
+            curr=curr.next
+        if curr is None and curr.next is None:
+            return head
+        temp=curr.next
+        curr.next=curr.next.next
+        del temp
+        return head
+
