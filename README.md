@@ -49,3 +49,19 @@ def deleteKthNode(self, head, k):
         del temp
         return head
 
+# DELETE THE ELEMENT WITH VALUE X
+def deleteNodeWithValueX(self, head, X):
+        if head is None:
+            return 
+        if head.data==X:
+            return head.next
+        curr=head
+        while curr.next is not None:
+            if curr.next.data==X:
+                curr.next=curr.next.next
+                break
+            curr=curr.next
+        return head
+
+        
+
