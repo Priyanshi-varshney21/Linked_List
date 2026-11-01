@@ -75,6 +75,16 @@ def deleteNodeWithValueX(self, head, X):
             prev.next=curr
             head=prev
         return head
-        
+
+# INSERTION AT THE TAIL OF THE LINKED LIST
+def insertAtTail(self, head, X):
+        if head is None:
+            head=ListNode(X)
+            return head
+        curr=head
+        while curr.next is not None:
+            curr=curr.next
+        curr.next=ListNode(X)
+        return head
         
 
