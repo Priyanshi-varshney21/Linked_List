@@ -86,5 +86,18 @@ def insertAtTail(self, head, X):
             curr=curr.next
         curr.next=ListNode(X)
         return head
-        
+
+# INSERTION AT THE KTH POSITION OF THE LINKED LIST
+def insertAtKthPosition(self, head, X, k):
+        if k==1:
+            newnode=ListNode(X)
+            newnode.next=head
+            return newnode
+        curr=head
+        for i in range(1,k-1):
+            curr=curr.next
+        newnode=ListNode(X)
+        newnode.next=curr.next
+        curr.next=newnode
+        return head
 
