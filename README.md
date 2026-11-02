@@ -117,3 +117,15 @@ def insertBeforeX(self, head, X, val):
                 return head
             curr=curr.next
         return head
+
+# FIND THE LENGTH OF THE LINKED LIST
+def getLength(self, head):
+        count=0
+        if head is None:
+            return 0
+        curr=head
+        while curr is not None:
+            count+=1
+            curr=curr.next
+        return count
+        
