@@ -129,3 +129,11 @@ def getLength(self, head):
             curr=curr.next
         return count
         
+# SEARCH IN A LINKED LIST
+def searchKey(self, head, key):
+        curr=head
+        while curr.data is not None:
+            if curr.data==X:
+                return True
+            curr=currr.next
+        return False
