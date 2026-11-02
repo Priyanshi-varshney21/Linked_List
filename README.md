@@ -101,3 +101,19 @@ def insertAtKthPosition(self, head, X, k):
         curr.next=newnode
         return head
 
+# INSERTION BEFORE THE VALUE X IN A LINKED LIST
+def insertBeforeX(self, head, X, val):
+        newNode=ListNode(val)
+        if head is None:
+            return 
+        if head.data==X:
+            newNode.next=head
+            return newNode
+        curr=head
+        while curr.next is not None:
+            if curr.next.data==X:
+                newNode.next=curr.next
+                curr.next=newNode
+                return head
+            curr=curr.next
+        return head
