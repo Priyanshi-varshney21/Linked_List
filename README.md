@@ -162,3 +162,34 @@ def deleteMiddle(self, head):
             fast=fast.next.next
         prev.next=slow.next
         return head
+
+# CHECK IF THE LINKED LIST IS PALINDROME
+def isPalindrome(self, head):
+        if head is None or head.next is None:
+            return True
+        #Find middle
+        slow=head
+        fast=head
+        while fast.next and fast.next.next:
+            slow=slow.next
+            fast=fast.next.next
+        #Reverse the second half
+        second=self.reverse(slow.next)
+        #Compare both halves
+        first=head
+        while second:
+            if first.val!=second.val:
+                return False
+            first=first.next
+            second=second.next
+        return True
+        #Reverse
+    def reverse(self,head):
+        prev=None
+        curr=head
+        while curr:
+            next=curr.next
+            curr.next=prev
+            prev=curr
+            curr=next
+        return prev
