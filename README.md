@@ -137,3 +137,14 @@ def searchKey(self, head, key):
                 return True
             curr=currr.next
         return False
+
+# FIND THE MIDDLE OF A LINKED LIST
+def middleOfLinkedList(self, head):
+        if head is None:
+            return 
+        slow=head
+        fast=head
+        while fast is not None and fast.next is not None:
+            slow=slow.next
+            fast=fast.next.next
+        return slow
