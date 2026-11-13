@@ -148,3 +148,17 @@ def middleOfLinkedList(self, head):
             slow=slow.next
             fast=fast.next.next
         return slow
+
+# DELETE THE MIDDLE NODE
+def deleteMiddle(self, head):
+        if head is None:
+            return 
+        prev=None
+        slow=head
+        fast=head
+        while fast is not None and fast.next is not None:
+            prev=slow
+            slow=slow.next
+            fast=fast.next.next
+        prev.next=slow.next
+        return head
