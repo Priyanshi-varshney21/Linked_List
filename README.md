@@ -204,3 +204,20 @@ def hasCycle(self, head):
             if slow==fast:
                 return True
         return False
+
+# FIND THE STARTING POINT
+def findStartingPoint(self, head):
+        slow=head
+        fast=head
+        while fast and fast.next:
+            slow=slow.next
+            fast=fast.next.next
+            if slow==fast:
+                break
+        else:
+            return None
+        slow=head
+        while slow!=fast:
+            slow=slow.next
+            fast=fast.next
+        return slow
