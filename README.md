@@ -221,3 +221,21 @@ def findStartingPoint(self, head):
             slow=slow.next
             fast=fast.next
         return slow
+
+# COUNT LENGTH OF A LOOP
+def findLengthOfLoop(self, head):
+        slow=head
+        fast=head
+        while fast and fast.next:
+            slow=slow.next
+            fast=fast.next.next
+            if slow==fast:
+                return self.count(slow)
+        return 0
+    def count(self,node):
+        count=1
+        temp=node.next
+        while temp!=node:
+            count+=1
+            temp=temp.next
+        return count
