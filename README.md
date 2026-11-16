@@ -254,4 +254,26 @@ def getIntersectionNode(self, headA, headB):
             else:
                 p2=p2.next
         return p2
-            
+
+#  Reverse LL in group of given size K
+def reverseKGroup(self, head, k):
+    if head is None or k == 1:
+        return head
+
+    curr = head
+    prev = None
+    count = 0
+
+    # Reverse first k nodes
+    while curr and count < k:
+        nextNode = curr.next
+        curr.next = prev
+        prev = curr
+        curr = nextNode
+        count += 1
+
+    # Connect remaining groups
+    if curr:
+        head.next = self.reverseKGroup(curr, k)
+
+    return prev
