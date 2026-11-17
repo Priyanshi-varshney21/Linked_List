@@ -291,3 +291,30 @@ def mergeTwoLists(self, list1, list2):
             list2.next=self.mergeTwoLists(list1,list2.next)
             return list2
 
+
+# SORT A LINKED LISTS
+def sortList(self, head):
+        if head is None or head.next is None:
+            return head
+        slow=head
+        fast=head
+        prev=None
+        while fast and fast.next:
+            prev=slow
+            slow=slow.next
+            fast=fast.next.next
+        prev.next=None
+        left=self.sortList(head)
+        right=self.sortList(slow)
+        return self.mergeTwoLists(left,right)
+    def mergeTwoLists(self, list1, list2):
+        if list1 is None:
+            return list2
+        if list2 is None:
+            return list1
+        if list1.val<=list2.val:
+            list1.next=self.mergeTwoLists(list1.next,list2)
+            return list1
+        else:
+            list2.next=self.mergeTwoLists(list1,list2.next)
+            return list2
