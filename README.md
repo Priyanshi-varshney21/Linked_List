@@ -318,3 +318,24 @@ def sortList(self, head):
         else:
             list2.next=self.mergeTwoLists(list1,list2.next)
             return list2
+
+# FLATTEN THE LINKED LIST
+def flattenLinkedList(self, head):
+        if head is None or head.next is None:
+            return head
+        head.next=self.flattenLinkedList(head.next)
+        head=self.merge(head,head.next)
+        return head
+    def merge(self,a,b):
+        if a is None:
+            return 
+        if b is None:
+            return a
+        if a.data<=b.data:
+            result=a
+            result.bottom=self.merge(a.bottom,b)
+        else:
+            result=b
+            result.bottom=self.merge(a,b.bottom)
+        result.next=None
+        return result
