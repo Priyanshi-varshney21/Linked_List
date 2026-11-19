@@ -356,3 +356,29 @@ def reverseKGroup(self, head, k):
         if curr:
             head.next=self.reverseKGroup(curr,k)
         return prev
+
+# ROTATE LINKED LIST
+if head is None or head.next is None:
+        return head
+
+    curr = head
+    length = 1
+
+    while curr.next:
+        curr = curr.next
+        length += 1
+
+    curr.next = head
+
+    k = k % length
+
+    steps = length - k
+
+    curr = head
+    for i in range(steps - 1):
+        curr = curr.next
+
+    newHead = curr.next
+    curr.next = None
+
+    return newHead
