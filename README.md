@@ -339,3 +339,20 @@ def flattenLinkedList(self, head):
             result.bottom=self.merge(a,b.bottom)
         result.next=None
         return result
+
+# REVESRE THE LINKED LIST OF SIZE K
+def reverseKGroup(self, head, k):
+        if head is None:
+            return None
+        curr=head
+        prev=None
+        count=0
+        while curr and count<k:
+            front=curr.next
+            curr.next=prev
+            prev=curr
+            curr=front
+            count+=1
+        if curr:
+            head.next=self.reverseKGroup(curr,k)
+        return prev
