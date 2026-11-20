@@ -382,3 +382,17 @@ if head is None or head.next is None:
     curr.next = None
 
     return newHead
+
+# FIND PAIRS WITH GIVEN SUM
+def findPairsWithGivenSum(self, head, target):
+        hashmap=set()
+        ans=[]
+        curr=head
+        while curr:
+            val=target-curr.val
+            if val in hashmap:
+                ans.append([val,curr.val])
+            hashmap.add(curr.val)
+            curr=curr.next
+        ans.sort()
+        return ans
